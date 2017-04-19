@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header ::common-header"/>
+
+<body>
+<div id="wrapper">
+    <div class="logo-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <a class="navbar-brand" href="index.html"><img src="/image/logo.png" class="img-responsive"/></a>
+                </div>
+                <!-- end col -->
+                <div class="col-md-9 col-sm-12">
+                    <div class="ads-widget clearfix">
+                        <a href="#"><img src="upload/banner_03.jpg" alt="" class="img-responsive"></a>
+                    </div>
+                    <!-- end ads-widget -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end logo-wrapper -->
+    <div th:replace="common/header :: common-menu"></div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <div th:if="${param.error != null}" style="color: red;">Incorrect Username or Password!</div>
+            <form th:action="@{/login}" method="post">
+                <div class="imgcontainer">
+                    <img src="/image/img_avatar2.png" alt="Avatar" class="avatar" >
+                </div>
+
+                <div class="form-container">
+                    <label><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="username" required>
+
+                    <label><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+
+                    <button type="submit">Login</button>
+                    <input type="checkbox" checked="checked" name="remember-me"> Remember me
+                </div>
+
+                <div class="form-container" style="background-color:#f1f1f1">
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<link href="/css/form.css" type="text/css" rel="stylesheet"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/plugins.js"></script>
+<!-- FlexSlider JavaScript
+================================================== -->
+<script src="js/jquery.flexslider.js"></script>
+<script>
+    $(window).load(function() {
+        $('#property-slider .flexslider').flexslider({
+            animation: "fade",
+            slideshowSpeed: 6000,
+            animationSpeed: 1300,
+            directionNav: true,
+            controlNav: false,
+            keyboardNav: true
+        });
+    });
+</script>
+</body>
+</html>
